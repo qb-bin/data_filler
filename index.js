@@ -25,7 +25,7 @@ const cooking = mongoose.model("Cooking", profile_schema);
 app.all('/', (req, res) => {
     cooking.find({__v: { $gte: 0} }).exec()
     .then((doc) => {
-        res.send(doc)
+        res.json(doc);
     })    
 })
 app.listen(process.env.PORT || 3000)
