@@ -1,7 +1,13 @@
 const mongoose = require("mongoose")
 const express = require('express')
+const cors = require("cors");
 
 const app = express()
+app.use(cors({
+        origin: "*",
+    })
+)
+
 
 var URI = "mongodb+srv://admin:admin@seva-108.vrzj5yt.mongodb.net/sunday-feast?retryWrites=true&w=majority";
 mongoose.connect(URI)
@@ -23,7 +29,6 @@ const cooking = mongoose.model("Cooking", profile_schema);
 
 
 app.get('/cooking', (req, res) => {
-    res.setHeader('Access-Control-Allow-Origin', '*');
     cooking.find({__v: { $gte: 0} }).exec()
     .then((doc) => {
         res.json(doc);
