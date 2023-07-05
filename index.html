@@ -1,22 +1,19 @@
-<div id="mem">
-    k
-</div>
-
-
-<button onclick="">Append</button>
-
-<Script>    
-    function myFunction () {
-        // const textnode = document.createTextNode("Water");
-        // document.getElementById("mem").appendChild(textnode)
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
     
-
-        $("button").click(function(){
-            $.get("demo_test.asp", function(data, status){
-                alert("Data: " + data + "\nStatus: " + status);
-            });
-        }); 
-
-    }
-
-</Script>
+</body>
+<script>
+  logMovies();
+  async function logMovies() {
+  const response = await fetch("https://data-filler.cyclic.app/");
+  const movies = await response.json();
+  console.log(movies);
+}
+</script>
+</html>
