@@ -27,11 +27,12 @@ const profile_schema = mongoose.Schema({
 
 const cooking = mongoose.model("Cooking", profile_schema);
 
-
 app.get('/cooking', (req, res) => {
     cooking.find({__v: { $gte: 0} }).exec()
     .then((doc) => {
         res.json(doc);
     })    
 })
+
+
 app.listen(process.env.PORT || 3000)
