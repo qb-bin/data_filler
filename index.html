@@ -3,21 +3,19 @@
 </div>
 
 
-<button onclick="myFunction()">Append</button>
+<button onclick="">Append</button>
+
 <Script>    
     function myFunction () {
         // const textnode = document.createTextNode("Water");
         // document.getElementById("mem").appendChild(textnode)
     
-        fetch("https://data-filler.cyclic.app/", {
-            method: "GET"
-        })
-        .then(res => {
-            console.log(res)
-        })
-        .catch(err => {
-            console.log(err)
-        })
+
+        $("button").click(function(){
+            $.get("demo_test.asp", function(data, status){
+                alert("Data: " + data + "\nStatus: " + status);
+            });
+        }); 
 
     }
 
