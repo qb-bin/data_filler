@@ -18,6 +18,7 @@
         
         function displayer(data) {
             for(let i = 0; i < data.length; i++) {
+                // console.log(data[i])   
                 var theDiv = document.getElementById("show");
                 var content = document.createTextNode(data[i].name + "---");
                 theDiv.appendChild(content);
