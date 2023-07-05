@@ -23,7 +23,7 @@ const cooking = mongoose.model("Cooking", profile_schema);
 
 
 app.get('/cooking', (req, res) => {
-    // res.setHeader('Access-Control-Allow-Origin', '*');
+    res.setHeader('Access-Control-Allow-Origin', '*');
     cooking.find({__v: { $gte: 0} }).exec()
     .then((doc) => {
         res.json(doc);
